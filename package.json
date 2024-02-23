@@ -1,6 +1,7 @@
 {
   "name": "ngp2",
   "version": "0.0.0",
+  "homepage": "https://andrejveljanoski.github.io/owebng2/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -32,6 +33,7 @@
     "@types/jasmine": "~5.1.0",
     "angular-cli-ghpages": "^2.0.0-beta.2",
     "autoprefixer": "^10.4.16",
+    "gh-pages": "^6.1.1",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

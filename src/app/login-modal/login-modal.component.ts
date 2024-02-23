@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login-modal',
@@ -13,8 +14,9 @@ export class LoginModalComponent {
 
   constructor(
     private router: Router,
-    private modalRef: MdbModalRef<LoginModalComponent>
-  ) {} // <-- Inject MdbModalRef here
+    private modalRef: MdbModalRef<LoginModalComponent>,
+    private loginService: LoginService
+  ) {}
 
   close(event: Event) {
     event.preventDefault();
@@ -22,7 +24,10 @@ export class LoginModalComponent {
   }
   onSubmit(event: Event) {
     event.preventDefault();
-    this.modalRef.close(); // <-- Use the injected MdbModalRef to close the modal
+    this.modalRef.close();
+    const username = (event.target as unknown as { value: string }[])?.[0]
+      ?.value;
+    this.loginService.hideLoginButton({ username });
     this.router.navigate(['/home']);
   }
 }

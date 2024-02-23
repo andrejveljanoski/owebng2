@@ -16,9 +16,7 @@ export class FeedbackComponent {
 
     this.snackBar.open('Thanks for giving feedback!', '', {
       duration: 2000,
-      verticalPosition: 'top',
-      horizontalPosition: 'end',
     });
-    // this.router.navigate(['/home']);
+    this.router.navigate(['/home']);
   }
 }

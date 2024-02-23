@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { MOVIES } from './db-data';
 import { Movie } from './interface';
 

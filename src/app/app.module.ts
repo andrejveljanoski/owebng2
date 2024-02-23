@@ -1,4 +1,3 @@
-import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MovieCardModule } from './movie-card/movie-card.module';
@@ -13,6 +12,8 @@ import { ContactComponent } from './contact/contact.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MovielistComponent } from './movielist/movielist.component';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,16 +24,16 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     FooterComponent,
     RouterModule.forRoot([
       { path: 'about-us', component: AboutUsComponent },
+      { path: 'movies', component: MovielistComponent },
       { path: 'feedback', component: FeedbackComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'privacy', component: PrivacyComponent },
       { path: 'home', component: MovieCardComponent },
+      { path: '', component: MovieCardComponent },
       { path: '**', component: NotFoundComponent },
     ]),
   ],
   bootstrap: [AppComponent],
-  providers: [
-    provideAnimationsAsync()
-  ],
+  providers: [provideAnimationsAsync()],
 })
 export class AppModule {}

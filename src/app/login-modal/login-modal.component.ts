@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 
 @Component({
   selector: 'app-login-modal',
@@ -10,11 +11,18 @@ import { Component } from '@angular/core';
 export class LoginModalComponent {
   isOpen = false;
 
+  constructor(
+    private router: Router,
+    private modalRef: MdbModalRef<LoginModalComponent>
+  ) {} // <-- Inject MdbModalRef here
 
-  openModal() {
-    this.isOpen = true;
+  close(event: Event) {
+    event.preventDefault();
+    this.modalRef.close();
   }
-  closeModal() {
-    this.isOpen = false;
+  onSubmit(event: Event) {
+    event.preventDefault();
+    this.modalRef.close(); // <-- Use the injected MdbModalRef to close the modal
+    this.router.navigate(['/home']);
   }
 }

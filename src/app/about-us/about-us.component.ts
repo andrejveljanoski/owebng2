@@ -7,8 +7,12 @@ import { NavbarComponent } from '../navbar/navbar.component';
   standalone: true,
   imports: [],
   templateUrl: './about-us.component.html',
-  styleUrl: './about-us.component.css'
+  styleUrl: './about-us.component.css',
 })
 export class AboutUsComponent {
-
+  func = () => {
+    setInterval(() => {
+      console.log('zdr');
+    }, 1000);
+  };
 }
